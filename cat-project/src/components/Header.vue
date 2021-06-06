@@ -1,5 +1,5 @@
 <template>
-    <div class='title-text'>{{ title }}</div>
+    <div class="title-back"><img class="title-img" src="../assets/title.png"></div>
 </template>
 
 <script>
@@ -9,15 +9,17 @@ export default {
 </script>
 
 <style scoped>
-    @import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
-
-    .title-text {
+    .title-back {
         position: relative;
-        font-family: 'Pacifico', cursive;
-        text-transform: uppercase;
-        font-size: 7vw;
-        top: -4vw;
-        color: #fbf0ff;
+        top: -60px;
+        background: #4b2c4b;
+        padding-bottom: 20px;
     }
 
+    .title-img {
+        position: relative;
+        top: 15px;
+        width: 75%;
+        max-height: 100%;
+    }
 </style>

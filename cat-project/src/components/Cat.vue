@@ -12,10 +12,13 @@
     </div>
 
     <div v-if="showCat">
-        <button class="cute-btn" @click="loadNextImage">Yeah, still bad...</button>
-        <button class="cute-btn" @click="clickEnd">Nop, I'm all good now</button>
+        
         <div class="cat-container">
             <img :src="image.url">
+        </div>
+        <div class="btns">
+            <button class="cute-btn" @click="loadNextImage">Yeah, still bad...</button>
+            <button class="cute-btn" @click="clickEnd">Nop, I'm all good now</button>
         </div>
     </div>
 </template>
@@ -38,7 +41,7 @@ export default {
         },
 
         async loadNextImage() {
-            if (this.count % 2 == 0) {
+            if (this.count % 5 == 0) {
                 // Toggle Modal and gift dog
                 this.$emit('open')
             }
@@ -137,8 +140,9 @@ export default {
         transform: translate(-50%, -50%);
     }
 
-    .cat-container {
-        margin-top: 50px;
+    .btns {
+        margin-top: 20px;
+        margin-bottom: 20px;
     }
 
     .cat-container img {

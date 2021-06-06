@@ -1,5 +1,5 @@
 <template>
-  <Header :title="title"/>
+  <Header/>
   <Cat @open="toggleModal" @end="toggleEnd"/>
   <div v-if="showModal">
     <Modal theme="dog" @close="toggleModal"/>
@@ -19,7 +19,6 @@ export default {
   components: { Cat, Header, Modal },
   data() {
     return {
-      title: 'Feeling bad?',
       showModal: false,
       showEnd: false
     }

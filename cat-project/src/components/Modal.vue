@@ -2,7 +2,8 @@
     <div class="backdrop" @click.self="closeModal">
         <div v-if="theme === 'dog'" class="modal">
             <h3>{{ choise }}</h3>
-            <h1>Here! have a dog for extra good boy feels</h1>
+            <h1>Have a dog</h1>
+            <h3>for extra good boy feels</h3>
 
             <div class="dog-container">
                 <img :src="image.url">
@@ -10,7 +11,8 @@
         </div>
 
         <div v-else class="modal">
-            <h1>Congrats!!! It's great to see you happy again</h1>
+            <h1>Congrats!!!</h1>
+            <h3>It's great to see you happy again</h3>
             <span @click="clickConfetti" style='font-size:100px;'>&#127881;</span>
         </div>
     </div>
@@ -34,6 +36,8 @@ export default {
         var index = Math.floor(Math.random() * this.texts.length)
         this.choise = this.texts[index]
         this.loadNextImage();
+
+        if (this.theme != 'dog') { this.clickConfetti() }
     } ,
     methods: {
         closeModal() {
@@ -76,6 +80,7 @@ export default {
         background: rgba(0,0,0,0.5);
         width: 100%;
         height: 100%;
+        overflow: scroll;
     }
     h1, h3 {
         color: #332250;
